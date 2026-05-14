@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:helloworld/screens/profile_screen.dart';
 import 'package:helloworld/screens/task_list_screen.dart';
 
-// Every Flutter app starts here.
 // runApp() takes a widget and inflates it as the root of the app.
 void main() {
   runApp(const MyApp());

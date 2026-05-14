@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'task_list_screen.dart'; // Import Task class
 
-// TaskDetailScreen receives a Task object and displays all its properties.
-// It is StatefulWidget because the task's isCompleted state can change here.
 class TaskDetailScreen extends StatefulWidget {
   final Task task; // The task passed in from the list screen
 
@@ -13,7 +11,6 @@ class TaskDetailScreen extends StatefulWidget {
 }
 
 class _TaskDetailScreenState extends State<TaskDetailScreen> {
-  // Returns a color based on priority level
   Color _priorityColor(String priority) {
     switch (priority) {
       case 'High':   return Colors.red;
@@ -22,18 +19,16 @@ class _TaskDetailScreenState extends State<TaskDetailScreen> {
     }
   }
 
-  // Returns an icon based on category
   IconData _categoryIcon(String category) {
     switch (category) {
       case 'School':   return Icons.school;
       case 'Health':   return Icons.favorite;
       case 'Work':     return Icons.work;
       case 'Finance':  return Icons.attach_money;
-      default:         return Icons.person; // Personal
+      default:         return Icons.person; 
     }
   }
 
-  // Shows a confirmation dialog before deleting
   void _confirmDelete() {
     showDialog(
       context: context,

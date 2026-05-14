@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-
-// ProfileScreen is a StatelessWidget because nothing on this screen changes.
-// It just displays fixed personal information.
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -20,12 +17,10 @@ class ProfileScreen extends StatelessWidget {
           children: [
             const SizedBox(height: 20),
 
-            // CircleAvatar shows initials when there is no photo
             const CircleAvatar(
               radius: 55,
               backgroundColor: Colors.teal,
               child: Text(
-                // *** REPLACE with your actual initials ***
                 'AB',
                 style: TextStyle(
                   fontSize: 40,
@@ -60,11 +55,9 @@ class ProfileScreen extends StatelessWidget {
             const Divider(),
             const SizedBox(height: 16),
 
-            // Bio section
             _sectionTitle('About Me'),
             const SizedBox(height: 10),
 
-            // *** REPLACE with 2-3 sentences about yourself ***
             const Text(
               'I am a passionate software engineering student with a keen interest in mobile and web development. '
               'I enjoy solving real-world problems through code and am always eager to learn new technologies. '
@@ -93,7 +86,6 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  // Helper method to build a section title — reused to keep code DRY
   Widget _sectionTitle(String title) {
     return Text(
       title,
@@ -105,7 +97,6 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  // Helper method to build each goal card
   Widget _goalCard(String emoji, String goal) {
     return Container(
       width: double.infinity,

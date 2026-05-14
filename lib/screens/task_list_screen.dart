@@ -2,18 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:helloworld/widgets/task_card.dart';
 import 'task_detail_screen.dart';
 
-// ─── Task Model ───────────────────────────────────────────────────────────────
-// A Dart class that represents one task. Think of it as a blueprint.
-// Every task you create will be an "instance" (object) of this class.
 class Task {
   String title;
   String description;
-  String category;   // e.g. School, Personal, Health
-  String priority;   // Low, Medium, High
+  String category;   
+  String priority;   
   DateTime dueDate;
   bool isCompleted;
 
-  // Constructor — called when you do: Task(title: '...', ...)
   Task({
     required this.title,
     required this.description,
@@ -51,7 +47,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
   // Controller reads whatever text the user types in the search field
   final TextEditingController _searchController = TextEditingController();
 
-  // ── Computed property: returns the filtered + sorted + searched list ──
+  // ── Computed property: returns the filtered + sorted + searched list
   List<Task> get _filteredTasks {
     // Step 1: Apply the All/Pending/Completed filter
     List<Task> result = _tasks.where((task) {
@@ -82,7 +78,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
     return result;
   }
 
-  // ── Opens the bottom sheet to add or edit a task ──
+  // ── Opens the bottom sheet to add or edit a task
   void _openTaskForm({Task? existing}) {
     // TextEditingControllers let us read and pre-fill form fields
     final titleController = TextEditingController(text: existing?.title ?? '');
